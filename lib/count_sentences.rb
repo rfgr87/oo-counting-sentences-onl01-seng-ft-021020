@@ -91,6 +91,7 @@ class String
         if !(x.include?("?")) || !(x.include?("!")) || !(x.include?("."))
           @d << x
         end
+      end
     elsif
       @d = self
     end
