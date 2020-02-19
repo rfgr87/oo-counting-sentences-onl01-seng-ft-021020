@@ -31,6 +31,7 @@ class String
     @sentences = []
     @sentences = self.split(".")
     @sentences = @sentences.split("!")
+    @sentences = @sentences.split("?")
     @sentences.length
   end
 
