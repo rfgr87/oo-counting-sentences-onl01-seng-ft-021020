@@ -28,17 +28,59 @@ class String
   end
 
   def count_sentences
-    @a = []
-    @b = []
-    @sentences = []
-    @sentences = self.split(".")
-    @sentences.collect do |fragments|
-      @a << fragments.split("!")
+    if self.include?(".")
+      @a = []
+      @a = self.split(".")
+      @a.each do |x|
+        if x.include?("!")
+          @b = []
+          @b = x.split("!")
+          @b.each do |x|
+            if x.include("?")
+              @c = []
+              @c = x.split
+            end
+          end
+        elsif 
+          x.include?("?")
+          @b = []
+          @b = x.split("?")
+        end
+      end
+    elsif
+      self.include?("?")
+      @a = []
+      @a = self.split("?")
+      @a.each do |x|
+        if x.include?("!")
+          @b = []
+          @b = x.split("!")
+        end
+      end
+    elsif
+      self.include?("!")
+      @a = []
+      @a = self.split("!")
     end
-    @a.collect do |fragments|
-      @b << fragments.split("?")
+    
+    @d = []
+    @a.each do |x|
+      if !(x.include?("?")) || !(x.include?("!")) ||
+        !(x.include?("."))
+        @d << x
+      end
     end
-    @b.length
+    if @b.length > 0
+      @b.each do |x|
+        @d << x
+      end
+    end
+    if @c.length > 0
+      @c.each do |x|
+        @d << x
+      end
+    end
+    @d
   end
-
+  
 end
