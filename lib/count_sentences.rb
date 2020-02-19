@@ -96,5 +96,5 @@ class String
     @d = @a
     @d.length
   end
-  
 end
+  
