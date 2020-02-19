@@ -35,7 +35,7 @@ class String
     if self.include?(".")
       @a = self.split(".")
       @a.each do |x|
-        if !x.include?(".") || !x.include?("!") || !x.include?("?")
+        if !x.include?(".") && !x.include?("!") && !x.include?("?")
           @d << x
         end
       end
@@ -43,7 +43,7 @@ class String
         if x.include?("!")
           @b = x.split("!")
           @b.each do |x|
-            if !x.include?("!") || !x.include?("?")
+            if !x.include?("!") && !x.include?("?")
               @d << x
             end
             if x.include?("?")
@@ -68,7 +68,7 @@ class String
       self.include?("?")
       @a = self.split("?")
       @a.each do |x|
-        if !x.include?("?") || !x.include?("!")
+        if !x.include?("?") && !x.include?("!")
           @d << x
         end
       end
@@ -86,7 +86,7 @@ class String
       self.include?("!")
       @a = self.split("!")
       @a.each do |x|
-        if !(x.include?("?")) || !(x.include?("!")) || !(x.include?("."))
+        if !(x.include?("?")) && !(x.include?("!")) && !(x.include?("."))
           @d << x
         end
       end
