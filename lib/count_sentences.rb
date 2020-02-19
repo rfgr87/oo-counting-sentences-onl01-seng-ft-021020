@@ -54,51 +54,36 @@ class String
                 end
               end
             end
-            
-                  
-            end
           end
         elsif 
           x.include?("?")
-          @b = x.split("?")
+            @b = x.split("?")
+            @b.each do |x|
+              if !x.include?("?")
+              @d << x
+              end
+            end
+          end
         end
       end
-      @a.each do |x|
-        if !(x.include?("?")) || !(x.include?("!")) || !(x.include?("."))
-          @d << x
-        end
-      end
-      if @b.length > 0
-        @b.each do |x|
-          @d << x
-        end
-      end
-      if @c.length > 0
-        @c.each do |x|
-          @d << x
-        end
-      end
-      return @d.length
     elsif
       self.include?("?")
       @a = self.split("?")
       @a.each do |x|
-        if x.include?("!")
-          @b = x.split("!")
+        if !x.include?("?") || !x.include?("!")
+          @d << x
         end
       end
-    @a.each do |x|
-      if !(x.include?("?")) || !(x.include?("!")) ||
-        !(x.include?("."))
-        @d << x
+      @a.each do |x|
+        if x.include?("!")
+          @b = x.split("!")
+          @b.each do |x|
+            if !x.include?("!")
+              @d << x
+            end
+          end
+        end
       end
-    end
-    if @b.length > 0
-      @b.each do |x|
-        @d << x
-      end
-    end
-    return @d.length
     elsif
       self.include?("!")
       @a = self.split("!")
@@ -106,12 +91,11 @@ class String
         if !(x.include?("?")) || !(x.include?("!")) || !(x.include?("."))
           @d << x
         end
-      end
-      return @d.length 
     elsif
-    @d = @a
-    @d.length
+      @d = self
+    end
+    return @d.length
   end
 end
-end
   
+      
