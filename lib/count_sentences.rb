@@ -35,8 +35,17 @@ class String
     if self.include?(".")
       @a = self.split(".")
       @a.each do |x|
+        if !x.include?(".") || !x.include?("!") || !x.include?("?")
+          @d << x
+        end
+      end
+      @a.each do |x|
         if x.include?("!")
           @b = x.split("!")
+          @b.each do |x|
+            if !x.include?("!") || !x.include?("?")
+              @d << x
+            end
           @b.each do |x|
             if x.include?("?")
               @c = x.split
@@ -96,5 +105,6 @@ class String
     @d = @a
     @d.length
   end
+end
 end
   
