@@ -33,7 +33,7 @@ class String
     @sentences.collect do |fragments|
       @sentences = fragments.split("!")
     end
-    @sentences.each do |fragments|
+    @sentences.collect do |fragments|
       @sentences = fragments.split("?")
     end
     @sentences.length
