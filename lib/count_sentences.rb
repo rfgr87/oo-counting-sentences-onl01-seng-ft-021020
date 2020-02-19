@@ -80,7 +80,7 @@ class String
         @d << x
       end
     end
-    @d
+    @d.length
   end
   
 end
