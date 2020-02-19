@@ -28,11 +28,16 @@ class String
   end
 
   def count_sentences
+    @a = []
     @sentences = []
     @sentences = self.split(".")
-    @sentences = @sentences.split("!")
-    @sentences = @sentences.split("?")
-    @sentences.length
+    @sentences.collect do |fragments|
+      @a = fragments.split("!")
+    end
+    @a.collect do |fragments|
+      @a = fragments.split("?")
+    end
+    @a.length
   end
 
 end
