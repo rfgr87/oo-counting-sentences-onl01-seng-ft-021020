@@ -55,11 +55,13 @@ class String
               end
             end
           end
-        elsif x.include?("? ")
-          @b = x.split("? ")
-          @b.each do |x|
-            if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
-            @d << x
+        else
+          if x.include?("? ")
+            @b = x.split("? ")
+            @b.each do |x|
+              if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
+              @d << x
+              end
             end
           end
         end
