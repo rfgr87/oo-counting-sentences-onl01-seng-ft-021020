@@ -28,22 +28,22 @@ class String
   end
 
   def count_sentences
+    @a = []
+    @b = []
+    @c = []
+    @d = []
     if self.include?(".")
-      @a = []
       @a = self.split(".")
       @a.each do |x|
         if x.include?("!")
-          @b = []
           @b = x.split("!")
           @b.each do |x|
             if x.include?("?")
-              @c = []
               @c = x.split
             end
           end
         elsif 
           x.include?("?")
-          @b = []
           @b = x.split("?")
         end
       end
@@ -53,17 +53,13 @@ class String
       @a = self.split("?")
       @a.each do |x|
         if x.include?("!")
-          @b = []
           @b = x.split("!")
         end
       end
     elsif
       self.include?("!")
-      @a = []
       @a = self.split("!")
     end
-    
-    @d = []
     @a.each do |x|
       if !(x.include?("?")) || !(x.include?("!")) ||
         !(x.include?("."))
@@ -84,3 +80,5 @@ class String
   end
   
 end
+
+
