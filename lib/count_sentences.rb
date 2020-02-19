@@ -47,19 +47,30 @@ class String
           @b = x.split("?")
         end
       end
+      @a.each do |x|
+        if !(x.include?("?")) || !(x.include?("!")) || !(x.include?("."))
+          @d << x
+        end
+      end
+      if @b.length > 0
+        @b.each do |x|
+          @d << x
+        end
+      end
+      if @c.length > 0
+        @c.each do |x|
+          @d << x
+        end
+      end
+      return @d.length
     elsif
       self.include?("?")
-      @a = []
       @a = self.split("?")
       @a.each do |x|
         if x.include?("!")
           @b = x.split("!")
         end
       end
-    elsif
-      self.include?("!")
-      @a = self.split("!")
-    end
     @a.each do |x|
       if !(x.include?("?")) || !(x.include?("!")) ||
         !(x.include?("."))
@@ -71,14 +82,19 @@ class String
         @d << x
       end
     end
-    if @c.length > 0
-      @c.each do |x|
-        @d << x
+    return @d.length
+    elsif
+      self.include?("!")
+      @a = self.split("!")
+      @a.each do |x|
+        if !(x.include?("?")) || !(x.include?("!")) || !(x.include?("."))
+          @d << x
+        end
       end
-    end
+      return @d.length 
+    elsif
+    @d = @a
     @d.length
   end
   
 end
-
-
