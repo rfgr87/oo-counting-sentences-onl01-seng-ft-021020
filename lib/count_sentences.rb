@@ -36,7 +36,7 @@ class String
           @b = []
           @b = x.split("!")
           @b.each do |x|
-            if x.include("?")
+            if x.include?("?")
               @c = []
               @c = x.split
             end
