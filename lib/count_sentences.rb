@@ -32,61 +32,61 @@ class String
     @b = []
     @c = []
     @d = []
-    if self.include?(".")
-      @a = self.split(".")
+    if self.include?(". ")
+      @a = self.split(". ")
       @a.each do |x|
-        if !x.include?(".") && !x.include?("!") && !x.include?("?")
+        if !x.include?(". ") && !x.include?("! ") && !x.include?("? ")
           @d << x
         end
       end
       @a.each do |x|
-        if x.include?("!")
-          @b = x.split("!")
+        if x.include?("! ")
+          @b = x.split("! ")
           @b.each do |x|
-            if !x.include?("!") && !x.include?("?") && !x.include?(".")
+            if !x.include?("! ") && !x.include?("? ") && !x.include?(". ")
               @d << x
             end
-            if x.include?("?")
+            if x.include?("? ")
               @c = x.split
               @c.each do |x|
-                if !x.include?("?") && !x.include?("!") && !x.include?(".")
+                if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
                   @d << x
                 end
               end
             end
           end
-        elsif x.include?("?")
-          @b = x.split("?")
+        elsif x.include?("? ")
+          @b = x.split("? ")
           @b.each do |x|
-            if !x.include?("?") && !x.include?("!") && !x.include?(".")
+            if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
             @d << x
             end
           end
         end
       end
     elsif
-      self.include?("?")
-      @a = self.split("?")
+      self.include?("? ")
+      @a = self.split("? ")
       @a.each do |x|
-        if !x.include?("?") && !x.include?("!") && !x.include?(".")
+        if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
           @d << x
         end
       end
       @a.each do |x|
-        if x.include?("!")
-          @b = x.split("!")
+        if x.include?("! ")
+          @b = x.split("! ")
           @b.each do |x|
-            if !x.include?("!")
+            if !x.include?("! ")
               @d << x
             end
           end
         end
       end
     elsif
-      self.include?("!")
-      @a = self.split("!")
+      self.include?("! ")
+      @a = self.split("! ")
       @a.each do |x|
-        if !(x.include?("?")) && !(x.include?("!")) && !(x.include?("."))
+        if !(x.include?("? ")) && !(x.include?("! ")) && !(x.include?(". "))
           @d << x
         end
       end
