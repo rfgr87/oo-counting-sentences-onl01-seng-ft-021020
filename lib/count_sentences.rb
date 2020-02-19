@@ -62,8 +62,6 @@ class String
             @d << x
             end
           end
-        else
-          @d << x
         end
       end
     elsif
