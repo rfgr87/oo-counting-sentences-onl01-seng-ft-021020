@@ -55,13 +55,11 @@ class String
               end
             end
           end
-        elsif 
-          x.include?("?")
-            @b = x.split("?")
-            @b.each do |x|
-              if !x.include?("?")
-              @d << x
-              end
+        elsif x.include?("?")
+          @b = x.split("?")
+          @b.each do |x|
+            if !x.include?("?")
+            @d << x
             end
           end
         end
@@ -97,6 +95,5 @@ class String
     end
     return @d.length
   end
-end
 end
       
