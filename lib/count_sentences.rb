@@ -29,15 +29,16 @@ class String
 
   def count_sentences
     @a = []
+    @b = []
     @sentences = []
     @sentences = self.split(".")
     @sentences.collect do |fragments|
-      @a = fragments.split("!")
+      @a << fragments.split("!")
     end
     @a.collect do |fragments|
-      @a = fragments.split("?")
+      @b << fragments.split("?")
     end
-    @a.length
+    @b.length
   end
 
 end
