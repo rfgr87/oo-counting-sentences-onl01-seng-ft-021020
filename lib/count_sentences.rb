@@ -85,7 +85,7 @@ class String
           @d << x
         end
       end
-    elsif
+    else
       @d = self
     end
     return @d.length
