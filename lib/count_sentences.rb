@@ -42,28 +42,21 @@ class String
       @a.each do |x|
         if x.include?("! ")
           @b = x.split("! ")
-          @b.each do |x|
-            if !x.include?("! ") && !x.include?("? ") && !x.include?(". ")
-              @d << x
-            end
-            if x.include?("? ")
-              @c = x.split
-              @c.each do |x|
-                if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
-                  @d << x
-                end
-              end
-            end
-          end
-        else
-          if x.include?("? ")
-            @b = x.split("? ")
-            @b.each do |x|
-              if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
-              @d << x
-              end
-            end
-          end
+        elsif x.include?("? ")
+          @b = x.split("? ")
+        end
+      end
+      @b.each do |x|
+        if !x.include?("! ") && !x.include?("? ") && !x.include?(". ")
+          @d << x
+        end
+        if x.include?("? ")
+          @c = x.split
+        end
+      end
+      @c.each do |x|
+        if !x.include?("? ") && !x.include?("! ") && !x.include?(". ")
+          @d << x
         end
       end
     elsif
@@ -77,11 +70,11 @@ class String
       @a.each do |x|
         if x.include?("! ")
           @b = x.split("! ")
-          @b.each do |x|
-            if !x.include?("! ")
-              @d << x
-            end
-          end
+        end
+      end
+      @b.each do |x|
+        if !x.include?("! ")
+          @d << x
         end
       end
     elsif
